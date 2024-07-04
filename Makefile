@@ -36,9 +36,11 @@ $(NAME)		: $(FUNC_OBJS) $(SRC_OBJS) $(OBJS)
 
 init		: $(NAME)
 				@./$(NAME)
+				cd ../my_project
 
 init\:%		: $(NAME)
 				@./$(NAME) $(subst init:,,$@)
+				cd ../$(subst init:,,$@)
 
 rm\:%		:
 				@rm -rf ../$(subst rm:,,$@)
