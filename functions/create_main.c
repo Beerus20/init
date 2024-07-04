@@ -6,7 +6,7 @@ void	ft_create_main(char *path, char *pname)
 	char	*file;
 
 	file = ft_join_path(2, path, "main.c");
-	fd = open(file, O_RDWR | O_CREAT);
+	fd = open(file, O_RDWR | O_CREAT, S_IRWXG | S_IRWXU | S_IRWXO);
 	if (fd == -1)
 	{
 		perror("ERROR to create main function\n");

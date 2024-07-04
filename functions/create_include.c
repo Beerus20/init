@@ -8,7 +8,7 @@ void	ft_create_includes(char *path, char *pname)
 	file = ft_strjoins(2, pname, ".h");
 	path = ft_join_path(2, path, file);
 	pname = ft_capitalize(pname);
-	fd = open(path, O_RDWR | O_CREAT);
+	fd = open(path, O_RDWR | O_CREAT, S_IRWXG | S_IRWXU | S_IRWXO);
 	if (fd == -1)
 	{
 		perror("ERROR to create include file\n");

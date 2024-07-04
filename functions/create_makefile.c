@@ -36,7 +36,7 @@ void	ft_create_makefile(char *path, char *pname)
 	char	*file;
 
 	file = ft_join_path(2, path, "Makefile");
-	fd = open(file, O_RDWR | O_CREAT);
+	fd = open(file, O_RDWR | O_CREAT, S_IRWXG | S_IRWXU | S_IRWXO);
 	free(file);
 	if (fd == -1)
 	{
