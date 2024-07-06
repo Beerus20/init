@@ -20,10 +20,10 @@ void	ft_init_target(int fd)
 	ft_target_script(fd, "$(call create_objs,$<,$@)");
 	dprintf(fd, "output/%%.o	: */%%.c | output\n");
 	ft_target_script(fd, "$(call create_objs,$<,$@)");
-	dprintf(fd, "$(NAME)		: $(FUNCT_OBJS) $(SRC_OBJS) $(OBJS)\n");
+	dprintf(fd, "$(NAME)		: $(FUNC_OBJS) $(SRC_OBJS) $(OBJS)\n");
 	ft_target_script(fd, "$(call create_exe,$^,$@)");
 	dprintf(fd, "clean		:\n");
-	ft_target_script(fd, "rm -rf $(FUNCT_OBJS) $(SRC_OBJS) $(OBJS)");
+	ft_target_script(fd, "rm -rf $(FUNC_OBJS) $(SRC_OBJS) $(OBJS)");
 	dprintf(fd, "fclean		: clean\n");
 	ft_target_script(fd, "rm -rf $(NAME)");
 	dprintf(fd, "re			: fclean all\n");
