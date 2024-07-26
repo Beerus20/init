@@ -21,9 +21,3 @@ int	main(int argc, const char **argv)
 	free(path);
 	return (0);
 }
-
-// if (mkdir(header_path, 0755) == -1)
-// 	{
-// 		perror("ERROR to create includes file");
-// 		return ;
-// 	}
